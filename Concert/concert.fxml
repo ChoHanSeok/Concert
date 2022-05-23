@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="borderPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controll.ConcertControl">
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="tabCon" text="Concert">
+               <content>
+                  <BorderPane fx:id="borderPane1" prefHeight="200.0" prefWidth="200.0">
+                     <top>
+                        <VBox prefHeight="242.0" prefWidth="800.0" style="-fx-background-color: #9966ff;" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="117.0" prefWidth="800.0" spacing="20.0" style="-fx-background-color: #9966ff;">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="152.0" prefWidth="90.0" spacing="20.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="100.0" style="-fx-background-color: black;" text="Concert ID" textFill="WHITE" />
+                                          <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="100.0" style="-fx-background-color: black;" text="Name" textFill="WHITE" />
+                                          <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="100.0" style="-fx-background-color: black;" text="Host" textFill="WHITE" />
+                                          <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="100.0" style="-fx-background-color: black;" text="Price" textFill="WHITE" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="100.0" prefWidth="250.0" spacing="20.0">
+                                       <children>
+                                          <TextField fx:id="txtConId" promptText="Concert ID" />
+                                          <TextField fx:id="txtConName" promptText="Concert Name" />
+                                          <TextField fx:id="txtConHost" promptText="Concert Host" />
+                                          <TextField fx:id="txtPrice" promptText="Concert Price" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets top="30.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="40.0" prefWidth="800.0" spacing="30.0" style="-fx-background-color: lightgray;">
+                                 <children>
+                                    <Button fx:id="btnInsert" mnemonicParsing="false" onAction="#Insert" text="Add" />
+                                    <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#Update" text="Revise" />
+                                    <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#Delete" text="Delete" />
+                                    <Button fx:id="btnFind" mnemonicParsing="false" onAction="#Find" text="Search" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="20.0" top="20.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </top>
+                     <center>
+                        <TableView fx:id="tableview" prefHeight="400.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn fx:id="colId" prefWidth="122.0" text="Concert ID" />
+                            <TableColumn fx:id="colConName" prefWidth="133.0" text="Concert Name" />
+                              <TableColumn fx:id="colConHost" prefWidth="132.0" text="Concert Host" />
+                              <TableColumn fx:id="colPrice" prefWidth="135.0" text="Concert Price" />
+                          </columns>
+                        </TableView>
+                     </center>
+                  </BorderPane>
+               </content>
+          </Tab>
+          <Tab fx:id="tabCust" text="Concert Custmer">
+               <content>
+                  <BorderPane fx:id="borderPane2" prefHeight="200.0" prefWidth="200.0">
+                     <top>
+                        <VBox prefHeight="230.0" prefWidth="750.0" style="-fx-background-color: #339900;" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="172.0" prefWidth="800.0" spacing="20.0" style="-fx-background-color: #339900;">
+                                 <children>
+                                    <VBox prefHeight="150.0" prefWidth="90.0" spacing="20.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="140.0" style="-fx-background-color: black;" text="Customer ID" textFill="WHITE" />
+                                          <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="240.0" style="-fx-background-color: black;" text="Name" textFill="WHITE" />
+                                          <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="152.0" style="-fx-background-color: black;" text="Adderss" textFill="WHITE" />
+                                          <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="229.0" style="-fx-background-color: black;" text=" Phone" textFill="WHITE" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="100.0" prefWidth="250.0" spacing="20.0">
+                                       <children>
+                                          <TextField fx:id="txtCustId" prefHeight="23.0" prefWidth="177.0" promptText="Customer ID" />
+                                          <TextField fx:id="txtCustName" promptText="Customer Name" />
+                                          <TextField fx:id="txtCustAdd" promptText="Customer Name" />
+                                          <TextField fx:id="txtCustPhone" promptText="Customer Phone" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="30.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="26.0" prefWidth="800.0" spacing="30.0" style="-fx-background-color: lightGray;">
+                                 <children>
+                                    <Button fx:id="btnInsert1" mnemonicParsing="false" onAction="#insert1" text="Add" />
+                                    <Button fx:id="btnUpdate1" mnemonicParsing="false" onAction="#Update1" text="Revise" />
+                                    <Button fx:id="btnDelete1" mnemonicParsing="false" onAction="#Delete1" text="Delete">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="btnFind1" mnemonicParsing="false" onAction="#Find1" text="Search" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="20.0" top="20.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </top>
+                     <bottom>
+                        <TableView fx:id="tableview1" prefHeight="314.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn fx:id="colCustId" prefWidth="126.0" text="Customer ID" />
+                            <TableColumn fx:id="colCustName" prefWidth="131.0" text="Customer Name" />
+                              <TableColumn fx:id="colCustAdd" minWidth="6.0" prefWidth="124.0" text="Customer Adderss" />
+                              <TableColumn fx:id="colCustPhone" prefWidth="134.0" text="Customer Phone" />
+                          </columns>
+                        </TableView>
+                     </bottom></BorderPane>
+               </content>
+          </Tab>
+            <Tab fx:id="tabTic" text="Ticketing">
+               <content>
+                  <BorderPane fx:id="borderPane3" prefHeight="200.0" prefWidth="200.0">
+                     <top>
+                        <VBox prefHeight="266.0" prefWidth="800.0" style="-fx-background-color: #0099ff;" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" style="-fx-background-color: #0099ff;">
+                                 <children>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="136.0" style="-fx-background-color: black;" text="Order ID" textFill="WHITE" />
+                                          <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="144.0" style="-fx-background-color: black;" text="Customer ID" textFill="WHITE" />
+                                          <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="186.0" style="-fx-background-color: black;" text="Concert ID" textFill="WHITE" />
+                                          <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="183.0" style="-fx-background-color: black;" text="SALEPRICE" textFill="WHITE" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="100.0" prefWidth="245.0" spacing="20.0">
+                                       <children>
+                                          <TextField fx:id="txtOrderId" prefHeight="23.0" prefWidth="261.0" promptText="Order ID" />
+                                          <TextField fx:id="txtCustId2" promptText="Customer ID" />
+                                          <TextField fx:id="txtConId2" promptText="Concert ID" />
+                                          <TextField fx:id="txtSale" promptText="SALEPRICE" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="30.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="87.0" prefWidth="800.0" spacing="30.0" style="-fx-background-color: lightgray;">
+                                 <children>
+                                    <Button fx:id="btnInsert2" mnemonicParsing="false" onAction="#Insert2" text="Add" />
+                                    <Button fx:id="btnUpdate2" mnemonicParsing="false" onAction="#Update2" text="Revise" />
+                                    <Button fx:id="btnDelete2" mnemonicParsing="false" onAction="#Delete2" text="Delete" />
+                                    <Button fx:id="btnFind2" mnemonicParsing="false" onAction="#txtFind2" text="Search" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="20.0" top="20.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </top>
+                     <center>
+                        <TableView fx:id="tableview2" prefHeight="273.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn fx:id="colOrderId2" prefWidth="133.0" text="Order ID" />
+                            <TableColumn fx:id="colCustId2" prefWidth="120.0" text="Customer ID" />
+                              <TableColumn fx:id="colConId2" prefWidth="131.0" text="Concert ID" />
+                              <TableColumn fx:id="colSale2" prefWidth="133.0" text="SALEPRICE" />
+                          </columns>
+                        </TableView>
+                     </center></BorderPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
